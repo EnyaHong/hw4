@@ -9,14 +9,17 @@
 <div class="row">
   <% for post in @posts %>
     <div class="col-md-6 col-lg-4">
-      <h4>
-        <%# find user who created post %>
-        <% user = User.find_by({ "id" => post["user_id"] }) %>
-      </h4>
         <h3><%= post["title"] %></h3>
-        <h4><%= post["posted_on"] %></h4>
-        <img src="<%= post["image"] %>" class="img-fluid">
+        <h5><%= post["posted_on"] %></h5>
+
+        <% if post.uploaded_image.attached? %>
+          <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
+        <% else %>
+          <img src="<%= post["image"] %>" class="img-fluid">
+        <% end %>
+        
         <p><%= post["description"] %></p>
+
     </div>
   <% end %>
 </div>
