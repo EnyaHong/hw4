@@ -1,15 +1,11 @@
 <div class="row">
   <% for post in @posts %>
     <div class="col-md-3 col-sm-6">
-      <!-- conditionally display attached file if post.uploaded_image.attached? -->
-      <% if post.uploaded_image.attached? %>
-        <!-- use url_for(post.uploaded_image) as attached file's url -->
-        <img src="<%=url_for(post.uploaded_image)%>" alt="" class="img-fluid">
-      <!-- otherwise display original image url from database column -->
-      <% else %>
-        <img src="<%= post["image"] %>" class="img-fluid">
-      <!-- end -->
-      <% end %>
+    <% if post.uploaded_image.attached? %>
+      <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
+    <% else %>
+      <img src="<%= post["image"] %>" class="img-fluid">
+    <% end %>
       <p><%= post["body"] %></p>
     </div>
   <% end %>
