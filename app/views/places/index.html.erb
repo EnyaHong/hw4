@@ -1,12 +1,12 @@
-<h1>Places</h1>
+<h1 class="py-3">Places</h1>
 
 <p>
   <a href="/places/new "class="btn btn-success">New place</a>
 </p>
 
-<div class="row">
+<div>
   <% for place in @places %>
-    <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
+    <p class="py-0.5"><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></p>
   <% end %>
 </div>
 

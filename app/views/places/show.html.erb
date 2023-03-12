@@ -1,4 +1,4 @@
-<h1><%= @place["name"] %></h1>
+<h1 class="py-3"><%= @place["name"] %></h1>
 
 <% if @current_user %>
   <p>
@@ -8,7 +8,7 @@
 
 <div class="row">
   <% for post in @posts %>
-    <div class="col-md-6 col-lg-3">
+    <div class="col-md-6 col-lg-4">
       <h3><%= post["title"] %></h3>
       <h4><%= post["posted_on"] %></h4>
       <p><%= post["description"] %></p>
@@ -19,5 +19,5 @@
 
 
 <p>
-  <a href="/places">Back to All Places</a>
+  <a href="/places "class="btn btn-secondary">Back to All Places</a>
 </p>
