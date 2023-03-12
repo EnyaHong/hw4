@@ -11,33 +11,32 @@
 
   <body class="container mt-4">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <% if @current_user %>
-               <span class="navbar-text">
-                Logged in as: <%= @current_user["username"] %>
-                </span>
-              <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
-              </li>
-              <% else %>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/sessions/new">Login</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/users/new">Signup</a>
-                </li>
-            <% end %>
-          </ul>
-
-        </div>
-      </div>
-    </nav>
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <% if @current_user %>
+                  <span class="navbar-text">
+                    Logged in as: <%= @current_user["username"] %>
+                    </span>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                  </li>
+                  <% else %>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/sessions/new">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/users/new">Signup</a>
+                    </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
     <div class="row">
       <div class="col-9">
