@@ -6,7 +6,11 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find_by({ "id" => params["id"] })
-    @posts = Post.where({ "place_id" => @place["id"], "user_id" => session["id"]})
+    if @current_user
+      @posts = Post.where({ "place_id" => @place["id"], "user_id" => @current_user["id"]})
+    else
+      @posts = []
+    end 
   end
 
   def new
