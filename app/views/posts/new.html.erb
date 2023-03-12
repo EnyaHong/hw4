@@ -18,6 +18,11 @@
     </div>
 
     <div class="mb-3">
+      <%= form.label "uploaded_image", :class => "form-label" %>
+      <%= form.file_field "uploaded_image", :class => "form-control" %>
+    </div>
+
+    <div class="mb-3">
       <%= form.label "posted_on", :class => "form-label" %>
       <%= form.date_field "posted_on", :class => "form-control" %>
     </div>

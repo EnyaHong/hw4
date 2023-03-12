@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
             redirect_to "/sessions/new"
         end
     else
-        redirect_to "/sessions_new"
+        redirect_to "/sessions/new"
     end
   end
 

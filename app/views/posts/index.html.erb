@@ -1,21 +1,15 @@
 <div class="row">
   <% for post in @posts %>
     <div class="col-md-3 col-sm-6">
-      <h4>
-        <%# find user who created post %>
-        <% user = User.find_by({ "id" => post["user_id"] }) %>
-        <%# handle any potential bad data where the post is missing a user %>
-        <% if user %>
-          <%= user["first_name"] %>
-        <% else %>
-          anonymous
-        <% end %>
-      </h4>
       <!-- conditionally display attached file if post.uploaded_image.attached? -->
+      <% if post.uploaded_image.attached? %>
         <!-- use url_for(post.uploaded_image) as attached file's url -->
+        <img src="<%=url_for(post.uploaded_image)%>" alt="" class="img-fluid">
       <!-- otherwise display original image url from database column -->
+      <% else %>
         <img src="<%= post["image"] %>" class="img-fluid">
       <!-- end -->
+      <% end %>
       <p><%= post["body"] %></p>
     </div>
   <% end %>
