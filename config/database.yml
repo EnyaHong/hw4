@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: tacogram_final_31production
+  username: tacogram_final_31
+  password: <%= ENV["TACOGRAM_FINAL31_DATABASE_PASSWORD"] %>
