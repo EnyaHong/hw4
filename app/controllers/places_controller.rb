@@ -10,7 +10,10 @@ class PlacesController < ApplicationController
         @posts = Post.where({ "place_id" => @place["id"], "user_id" => @current_user ["id"]})
     else
       @posts = []
-    end 
+    end
+    @post = Post.new
+    @post["place_id"] = @place["id"]
+
   end
 
   def new
