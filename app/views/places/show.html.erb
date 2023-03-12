@@ -1,6 +1,11 @@
 <h1><%= @place["name"] %></h1>
 
-<h2>My Posts</h2>
+<% if @current_user %>
+  <p>
+    <a href="/posts/new?place_id=<%= @place["id"] %> "class="btn btn-success">New Post</a>
+  </p>
+<% end %>
+
 <div class="row">
   <% for post in @posts %>
     <div class="col-md-6 col-lg-3">
@@ -11,11 +16,7 @@
   <% end %>
 </div>
 
-<% if @current_user %>
-  <p>
-    <a href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
-  </p>
-<% end %>
+
 
 <p>
   <a href="/places">Back to All Places</a>
